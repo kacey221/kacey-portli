@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Helvetica", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  body {
+    @apply bg-[#000000] text-[#ffffff] antialiased selection:bg-white selection:text-black;
+  }
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.project-card-shadow {
+  box-shadow: 0 4px 30px -2px rgba(0, 0, 0, 0.5);
+}
+
+.project-card-hover {
+  @apply transition-all duration-500 ease-out hover:translate-y-[-8px] hover:border-white/30 hover:bg-neutral-900;
+}
+
+.limi-cover {
+  background: #d7e8ec;
+}
+
+.limi-cover-bg {
+  background:
+    radial-gradient(circle at 18% 22%, rgba(236, 246, 244, 0.86), transparent 34%),
+    radial-gradient(circle at 70% 18%, rgba(195, 119, 216, 0.62), transparent 38%),
+    linear-gradient(117deg, #dfe9ec 0%, #c4dfe8 24%, #b7a9df 52%, #37c8c7 82%, #00a9c8 100%);
+  background-size: 135% 135%;
+  transform: scale(1.08);
+  animation: limi-cover-drift 9s ease-in-out infinite alternate;
+  will-change: transform, background-position;
+}
+
+@keyframes limi-cover-drift {
+  0% {
+    background-position: 0% 50%;
+    transform: scale(1.08) translate3d(-2%, -1%, 0);
+  }
+
+  100% {
+    background-position: 100% 44%;
+    transform: scale(1.12) translate3d(2%, 1%, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .limi-cover-bg {
+    animation: none;
+    transform: scale(1.08);
+  }
+}
