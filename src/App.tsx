@@ -1424,9 +1424,9 @@ export default function App() {
                 </h1>
                 <p className="text-lg md:text-xl text-white/80 leading-relaxed font-normal tracking-wide">
                   {lang === 'zh' ? (
-                    "AI视觉设计师，十年专注于品牌设计、产品包装与IP孵化。作为小红书与微信公众号自媒体创作者，持续探索AI视觉设计、自动化工作流与设计代码协同（vibe coding），按需开发可复用的工具资产。"
+                    "匡丽霞，资深品牌设计师，具备 10 年品牌与视觉设计经验。擅长从业务目标、品牌定位、用户洞察和竞品分析出发，搭建 LOGO/VI/IP、包装、电商与活动视觉体系；同时持续实践 AI 产品与 Codex 工具开发，把可复用流程沉淀为 Skill，提升内容与设计交付效率。"
                   ) : (
-                    "AI visual designer with 10 years of experience in brand design, product packaging, and IP incubation. As a content creator on Xiaohongshu and WeChat, I continuously explore AI visual design, automation workflows, and design-to-code synergy (Vibe Coding), developing reusable tool assets as needed."
+                    "Lixia Kuang is a senior brand designer with 10 years of experience in brand and visual design. She works from business goals, brand positioning, user insight, and competitor research to build logo/VI/IP, packaging, e-commerce, and campaign visual systems. She also practices AI product workflows and Codex tool development, turning repeatable processes into Skills that improve content and design delivery."
                   )}
                 </p>
               </div>
@@ -1434,61 +1434,61 @@ export default function App() {
               {/* Divider */}
               <div className="h-[1px] bg-white/10 my-12" />
 
-              {/* 我在做什么 / What I do */}
+              {/* 核心能力 / Core Strengths */}
               <div className="mb-20">
                 <h2 className="text-xs uppercase tracking-[0.2em] text-white/40 mb-10 font-mono font-semibold" style={{ fontSize: '11px' }}>
-                  {lang === 'zh' ? '我在做什么' : 'What I Do'}
+                  {lang === 'zh' ? '核心能力' : 'Core Strengths'}
                 </h2>
                 
                 <div className="space-y-12">
                   <div>
                     <h3 className="text-lg font-medium text-white mb-3">
-                      {lang === 'zh' ? 'AI 视觉设计与体验' : 'AI Visual Design & Experience'}
+                      {lang === 'zh' ? '品牌从 0 到 1 搭建' : 'Brand Building from 0 to 1'}
                     </h3>
                     <p className="text-[14px] text-white/50 leading-relaxed max-w-2xl">
                       {lang === 'zh' ? (
-                        "应用 Midjourney, Stable Diffusion 等 AIGC 工具，实现对话式交互，生成式 UI 与海报插画的高效生图，完成从概念设想到创意的敏捷落地。"
+                        "能从品牌定位、市场趋势、用户画像和竞品分析中提炼视觉方向，完成 LOGO、VI、IP、包装、电商视觉与活动物料的系统搭建，让品牌形象保持一致、可识别、可延展。"
                       ) : (
-                        "Utilize Midjourney, Stable Diffusion and other cutting-edge AIGC tools to achieve conversational interactions, generative UI, and efficient visual content generation, moving from concept to creative deployment rapidly."
+                        "Define visual direction from brand positioning, market trends, audience profiles, and competitor research. Build logo, VI, IP, packaging, e-commerce, and campaign assets into a consistent, recognizable, and scalable brand system."
                       )}
                     </p>
                   </div>
 
                   <div>
                     <h3 className="text-lg font-medium text-white mb-3">
-                      {lang === 'zh' ? '品牌策划与体验交互' : 'Brand Planning & Strategic Identity'}
+                      {lang === 'zh' ? '业务转化导向的视觉设计' : 'Business-Oriented Visual Design'}
                     </h3>
                     <p className="text-[14px] text-white/50 leading-relaxed max-w-2xl">
                       {lang === 'zh' ? (
-                        "深入洞察用户核心需求与产品定位，为新锐品牌策划端到端的信息架构，设计高格调的视觉标识与交互规范，帮助品牌实现从 0 到 1 的建立。"
+                        "设计判断不只停留在审美层面，会结合销售目标、渠道场景、用户复购、页面转化和活动传播效果，输出能支持业务增长的包装、电商详情页、主图、banner 与线下物料。"
                       ) : (
-                        "Deeply observe user insights and product positioning. Outline end-to-end information architectures, visual symbols, and UI system guidelines to help modern projects build a brand from scratch."
+                        "Make design decisions beyond aesthetics by connecting sales goals, channel context, repeat purchase, page conversion, and campaign reach. Deliver packaging, detail pages, key visuals, banners, and offline materials that support business growth."
                       )}
                     </p>
                   </div>
 
                   <div>
                     <h3 className="text-lg font-medium text-white mb-3">
-                      {lang === 'zh' ? '产品包装设计' : 'Modern Packaging Design'}
+                      {lang === 'zh' ? 'AI 设计提效与工具化能力' : 'AI Efficiency & Tool-Making'}
                     </h3>
                     <p className="text-[14px] text-white/50 leading-relaxed max-w-2xl">
                       {lang === 'zh' ? (
-                        "结合材质感官与极简美学，主导实体产品外观、材质工艺全周期研发，让视觉创意不仅好看，更能完美工艺落地。"
+                        "熟悉 Midjourney、Stable Diffusion、ComfyUI、Codex 与 Google AI Studio。能把真实创作需求拆成流程、功能和工具，并通过生图网站、Writing helper Skill 等实践降低交付成本、缩短制作周期。"
                       ) : (
-                        "Combine tactile materials with minimal aesthetics. Oversee physical shell layouts and overall visual packaging development to ensure creative ideas turn into perfectly engineered final goods."
+                        "Experienced with Midjourney, Stable Diffusion, ComfyUI, Codex, and Google AI Studio. Break real creative needs into workflows, features, and tools, using projects such as an image-generation website and Writing helper Skill to reduce delivery cost and production time."
                       )}
                     </p>
                   </div>
 
                   <div>
                     <h3 className="text-lg font-medium text-white mb-3">
-                      {lang === 'zh' ? 'Vibe Coding 设计-代码协同' : 'Vibe Coding & Prototyping'}
+                      {lang === 'zh' ? '自驱动学习与跨界执行力' : 'Self-Driven Learning & Execution'}
                     </h3>
                     <p className="text-[14px] text-white/50 leading-relaxed max-w-2xl">
                       {lang === 'zh' ? (
-                        "以 Vibe Codex & AI 辅助开发的智能工作流为骨干，不设边界地将视觉理想转译为可流畅交互、可部署上线的生产级数字体验。"
+                        "从品牌设计延伸到 AI 产品研究、内容运营、开源 Skill 与个人网站开发，保持对新工具和新方法的高敏感度；能主动学习、快速验证，并把经验转化为可复用的工作方法。"
                       ) : (
-                        "Use Vibe Codex and AI-aided pipelines to freely translate pure visual blueprints into fully interactive, deployable, and client-ready digital products."
+                        "Extend from brand design into AI product research, content operations, open-source Skills, and personal website development. Stay sensitive to new tools, learn quickly, validate ideas, and turn experience into repeatable working methods."
                       )}
                     </p>
                   </div>
@@ -1507,45 +1507,60 @@ export default function App() {
                 <div className="space-y-14">
                   {/* Item 1 */}
                   <div className="border-l border-white/10 pl-6 space-y-3">
-                    <div className="text-xs font-mono font-semibold text-[#B6EDF0]" style={{ fontSize: '11px' }}>2023 — {lang === 'zh' ? '至今' : 'Present'}</div>
+                    <div className="text-xs font-mono font-semibold text-[#B6EDF0]" style={{ fontSize: '11px' }}>2026.01 — {lang === 'zh' ? '至今' : 'Present'}</div>
                     <h3 className="text-lg font-medium text-white">
-                      {lang === 'zh' ? '独立视觉设计师 & 泛自媒体品牌主理人' : 'Independent Visual Designer & Self-Media Lead'}
+                      {lang === 'zh' ? '全栈设计师 / AI 产品研究与创作' : 'Full-Stack Designer / AI Product Research & Creation'}
                     </h3>
                     <p className="text-sm text-white/60 leading-relaxed">
                       {lang === 'zh' ? (
-                        "专注于品牌包装、潮流 IP 及 AI 辅助设计的全案。在小红书、微信公众号发布文章、教程，分享面向设计师的 AI 提示词、AI 智能体工作流。探索用 Vibe Coding 流程直接进行前端呈现与想法自建。"
+                        "围绕设计师真实创作需求，使用 Codex 与 Google AI Studio 开发生图网站和个人网站，完成需求定义、功能梳理、交互流程与本地验证；将公众号写作方法沉淀为开源 Writing helper Skill，体现快速学习、产品思维与闭环执行能力。"
                       ) : (
-                        "Specialize in packaging, character IP, and AI-powered workflow design. Publish design articles and prompt libraries on social channels (Xiaohongshu, WeChat) for designers to bridge ideas with advanced technology."
+                        "Build image-generation and personal websites with Codex and Google AI Studio around real designer needs, covering requirements, feature structure, interaction flow, and local validation. Turn WeChat writing methods into an open-source Writing helper Skill, showing product thinking, fast learning, and closed-loop execution."
                       )}
                     </p>
                   </div>
 
                   {/* Item 2 */}
                   <div className="border-l border-white/10 pl-6 space-y-3">
-                    <div className="text-xs font-mono font-semibold text-[#B6EDF0]" style={{ fontSize: '11px' }}>2020 — 2023</div>
+                    <div className="text-xs font-mono font-semibold text-[#B6EDF0]" style={{ fontSize: '11px' }}>2020.06 — 2025.12</div>
                     <h3 className="text-lg font-medium text-white">
-                      {lang === 'zh' ? '高级品牌与包装设计师' : 'Senior Brand & Packaging Designer'}
+                      {lang === 'zh' ? '设计工作室 / 品牌设计师' : 'Design Studio / Brand Designer'}
                     </h3>
                     <p className="text-sm text-white/60 leading-relaxed">
                       {lang === 'zh' ? (
-                        "主导多款核心快消品的整体视觉开发。搭建新锐品牌的底层视觉范式与物料体系；实现艺术美学和高转化率包装材质的结合，累计设计产品获得极高市场评价与数十万销售量。"
+                        "负责品牌活动创意、节日营销包装、电商主图与详情页设计，围绕销售目标和用户复购优化视觉表达；搭建品牌资产体系提升识别度与一致性，并引入 Stable Diffusion、ComfyUI 缩短交付周期、降低外包成本。"
                       ) : (
-                        "Led full-cycle packaging and identity systems for major FMCG categories. Merged minimal art with modern box containers, helping startups establish trustworthy shelf appeal and achieve hundreds of thousands of retail sales."
+                        "Handled brand campaign concepts, seasonal packaging, e-commerce key visuals, and detail pages, optimizing visual expression around sales goals and repeat purchase. Built brand assets for stronger recognition and consistency, while introducing Stable Diffusion and ComfyUI to shorten delivery cycles and reduce outsourcing costs."
                       )}
                     </p>
                   </div>
 
                   {/* Item 3 */}
                   <div className="border-l border-white/10 pl-6 space-y-3">
-                    <div className="text-xs font-mono font-semibold text-[#B6EDF0]" style={{ fontSize: '11px' }}>2014 — 2020</div>
+                    <div className="text-xs font-mono font-semibold text-[#B6EDF0]" style={{ fontSize: '11px' }}>2018.07 — 2020.04</div>
                     <h3 className="text-lg font-medium text-white">
-                      {lang === 'zh' ? '资深视觉传达设计师' : 'Senior Visual Communication Specialist'}
+                      {lang === 'zh' ? '重庆任我在线科技服务有限公司 / 资深品牌设计师' : 'Chongqing Renwo Online Technology Service Co., Ltd. / Senior Brand Designer'}
                     </h3>
                     <p className="text-sm text-white/60 leading-relaxed">
                       {lang === 'zh' ? (
-                        "服务多领域知名客户，负责线下展陈视觉设计、商业海报、品牌全案。通过富有生命力的 IP 形象及深具辨识度的排版规则，极大地拓宽了平面媒介和现实空间的交互边界。"
+                        "主导公司品牌 LOGO 与 VI 系统设计，协助制定品牌传播策略，提炼超级符号提升市场辨识度；负责线上线下活动物料、小程序详情页、头图与 banner，通过竞品分析优化页面表达与用户转化。"
                       ) : (
-                        "Designed brand identities, creative books, and offline event signage for recognized brands. Excelled at pairing deep narrative details with beautiful typography layouts."
+                        "Led company logo and VI system design, supported brand communication strategy, and refined signature brand symbols to improve market recognition. Created online/offline campaign assets, mini-program detail pages, hero images, and banners, using competitor analysis to improve page expression and conversion."
+                      )}
+                    </p>
+                  </div>
+
+                  {/* Item 4 */}
+                  <div className="border-l border-white/10 pl-6 space-y-3">
+                    <div className="text-xs font-mono font-semibold text-[#B6EDF0]" style={{ fontSize: '11px' }}>2015.04 — 2018.05</div>
+                    <h3 className="text-lg font-medium text-white">
+                      {lang === 'zh' ? '重庆玛格家居有限公司 / 品牌设计师' : 'Chongqing Macio Home Furnishing Co., Ltd. / Brand Designer'}
+                    </h3>
+                    <p className="text-sm text-white/60 leading-relaxed">
+                      {lang === 'zh' ? (
+                        "负责家居产品包装画册、线上线下活动视觉方案与品牌物料设计。结合目标消费者特征、产品定位与竞品趋势设定视觉风格，让设计同时服务品牌形象、营销策略与用户偏好。"
+                      ) : (
+                        "Designed home product packaging brochures, online/offline campaign visuals, and brand assets. Shaped visual direction through audience insight, product positioning, and competitor trends so design could support brand image, marketing strategy, and user preference."
                       )}
                     </p>
                   </div>
