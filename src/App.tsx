@@ -137,6 +137,8 @@ const TRAIL_IMAGES = [
 const PORTFOLIO_STORAGE_KEY = 'kacey-portfolio-items';
 const VIDEO_PROJECT_STORAGE_KEY = 'kacey-video-project';
 const VIDEO_PROJECTS_STORAGE_KEY = 'kacey-video-projects';
+const MEDIA_DATA_VERSION_KEY = 'kacey-media-data-version';
+const MEDIA_DATA_VERSION = '2026-09-24-default-media';
 const VIDEO_HOME_COVER = '/images/video-portfolio-cover.png';
 
 const imageMedia = (fileName: string): PortfolioMedia => ({ url: `/uploads/${fileName}`, type: 'image' });
@@ -349,6 +351,10 @@ const loadVideoProject = (): PortfolioItem => {
 
 const loadVideoProjects = (): PortfolioItem[] => {
   try {
+    if (window.localStorage.getItem(MEDIA_DATA_VERSION_KEY) !== MEDIA_DATA_VERSION) {
+      return DEFAULT_VIDEO_PROJECTS;
+    }
+
     const saved = window.localStorage.getItem(VIDEO_PROJECTS_STORAGE_KEY);
     if (saved) {
       const projects = JSON.parse(saved) as PortfolioItem[];
@@ -1012,6 +1018,11 @@ export default function App() {
   const isVideoPortfolioPage = currentPage === 'video-portfolio';
 
   const [portfolioItems, setPortfolioItems] = useState<PortfolioItem[]>(() => {
+    const hasCurrentMediaData = window.localStorage.getItem(MEDIA_DATA_VERSION_KEY) === MEDIA_DATA_VERSION;
+    if (!hasCurrentMediaData) {
+      return normalizePortfolioItems(DEFAULT_PORTFOLIO_ITEMS);
+    }
+
     const savedItems = window.localStorage.getItem(PORTFOLIO_STORAGE_KEY);
     if (!savedItems) {
       return normalizePortfolioItems(DEFAULT_PORTFOLIO_ITEMS);
@@ -1029,6 +1040,7 @@ export default function App() {
   const activePortfolioItems = isVideoPortfolioPage ? videoProjects : portfolioItems;
 
   useEffect(() => {
+    window.localStorage.setItem(MEDIA_DATA_VERSION_KEY, MEDIA_DATA_VERSION);
     window.localStorage.setItem(PORTFOLIO_STORAGE_KEY, JSON.stringify(normalizePortfolioItems(portfolioItems)));
   }, [portfolioItems]);
 
