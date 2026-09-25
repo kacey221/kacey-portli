@@ -1688,7 +1688,7 @@ export default function App() {
                   {lang === 'zh' ? '创作与反响' : 'Creation & Resonance'}
                 </h2>
 
-                <div className="grid md:grid-cols-2 gap-6">
+                <div className="grid gap-6">
                   {/* Creation Item 1 */}
                   <div className="bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/[0.08] transition-colors relative flex flex-col justify-between">
                     <div>
@@ -1708,28 +1708,6 @@ export default function App() {
                       <div><span className="font-semibold text-[#B6EDF0]">2.8w</span> {lang === 'zh' ? '浏览' : 'Views'}</div>
                       <div><span className="font-semibold text-white/80">372</span> {lang === 'zh' ? '点赞' : 'Likes'}</div>
                       <div><span className="font-semibold text-white/80">60</span> {lang === 'zh' ? '分享' : 'Shares'}</div>
-                    </div>
-                  </div>
-
-                  {/* Creation Item 2 */}
-                  <div className="bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/[0.08] transition-colors relative flex flex-col justify-between">
-                    <div>
-                      <h4 className="text-lg font-medium text-white mb-2">
-                        {lang === 'zh' ? 'AI 视觉设计提示词库' : 'AI Visual Prompts Hub'}
-                      </h4>
-                      <p className="text-[13px] text-white/40 leading-relaxed mb-6">
-                        {lang === 'zh' ? (
-                          "精选整理适合品牌、包装、海报及漫画插图的 AI 生图高层级提示词规范，提供可以直接复用的可读范例，帮助成千上万同行完成日常极速提效。"
-                        ) : (
-                          "Curated prompt library covering branding, product shells, and illustrations, extensively shared inside major design forums."
-                        )}
-                      </p>
-                    </div>
-                    {/* Stats */}
-                    <div className="flex justify-between border-t border-white/5 pt-4 text-xs font-mono text-white/40">
-                      <div><span className="font-semibold text-[#B6EDF0]">5.4w</span> {lang === 'zh' ? '浏览' : 'Views'}</div>
-                      <div><span className="font-semibold text-white/80">933</span> {lang === 'zh' ? '点赞' : 'Likes'}</div>
-                      <div><span className="font-semibold text-white/80">132</span> {lang === 'zh' ? '分享' : 'Shares'}</div>
                     </div>
                   </div>
                 </div>
