@@ -436,7 +436,8 @@ const wuhanFoodFestivalProject = (): PortfolioItem => ({
 
 const syncPortfolioCover = (item: PortfolioItem): PortfolioItem => ({
   ...item,
-  image: item.images[0]?.url ?? item.image,
+  image: item.images[0]?.poster ?? item.images[0]?.url ?? item.image,
+  coverPosition: item.coverVariant ? item.coverPosition : 'top',
 });
 
 const normalizePortfolioItems = (items: PortfolioItem[]) => {
@@ -1077,7 +1078,7 @@ export default function App() {
   }, [videoProjects]);
 
   const handleTitleClick = () => {
-    if (!isVideoPortfolioPage || isAdminMode) return;
+    if (isAdminMode) return;
 
     const now = Date.now();
     if (now - lastClickTime < 1000) {
