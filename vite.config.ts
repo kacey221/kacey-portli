@@ -30,13 +30,35 @@ export default defineConfig(({mode}) => {
         name: 'local-upload-api',
         configureServer(server) {
           server.middlewares.use('/api/upload', async (req, res) => {
-            if (req.method !== 'POST') {
+            if (req.method !== 'POST' && req.method !== 'DELETE') {
               res.statusCode = 405;
               res.end(JSON.stringify({ error: 'Method not allowed' }));
               return;
             }
 
             try {
+              if (req.method === 'DELETE') {
+                const body = JSON.parse(await readRequestBody(req)) as { url?: string };
+                if (!body.url?.startsWith('/uploads/')) {
+                  res.statusCode = 400;
+                  res.end(JSON.stringify({ error: 'Invalid upload URL' }));
+                  return;
+                }
+
+                const fileName = path.basename(body.url);
+                const filePath = path.resolve(uploadDir, fileName);
+                if (!filePath.startsWith(`${uploadDir}${path.sep}`)) {
+                  res.statusCode = 400;
+                  res.end(JSON.stringify({ error: 'Invalid file path' }));
+                  return;
+                }
+
+                if (fs.existsSync(filePath)) fs.unlinkSync(filePath);
+                res.setHeader('Content-Type', 'application/json');
+                res.end(JSON.stringify({ ok: true }));
+                return;
+              }
+
               const body = JSON.parse(await readRequestBody(req)) as {
                 fileName?: string;
                 data?: string;

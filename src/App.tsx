@@ -397,6 +397,30 @@ const uploadLocalFile = async (file: Blob, fileName: string) => {
   return result.url;
 };
 
+const deleteUploadedFile = async (url?: string) => {
+  if (!url?.startsWith('/uploads/')) return;
+
+  try {
+    await fetch('/api/upload', {
+      method: 'DELETE',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ url }),
+    });
+  } catch (error) {
+    console.error('Failed to delete uploaded file:', error);
+  }
+};
+
+const deleteUploadedMedia = (media: PortfolioMedia | string) => {
+  if (typeof media === 'string') {
+    void deleteUploadedFile(media);
+    return;
+  }
+
+  void deleteUploadedFile(media.url);
+  void deleteUploadedFile(media.poster);
+};
+
 const wuhanFoodFestivalProject = (): PortfolioItem => ({
   id: 7,
   title: "武汉美食节",
@@ -1070,7 +1094,11 @@ export default function App() {
   };
 
   const deleteProject = (id: number) => {
-    setPortfolioItems(prev => prev.filter(item => item.id !== id));
+    setPortfolioItems(prev => {
+      const project = prev.find(item => item.id === id);
+      project?.images.forEach(deleteUploadedMedia);
+      return prev.filter(item => item.id !== id);
+    });
   };
 
   const moveImage = (projectIdx: number, imgIdx: number, direction: 'up' | 'down') => {
@@ -1115,6 +1143,7 @@ export default function App() {
       setVideoProjects(prev => {
         const project = prev[projectIdx];
         if (!project) return prev;
+        deleteUploadedMedia(project.images[imgIdx]);
         const images = project.images.filter((_, i) => i !== imgIdx);
         const next = { ...project, images, image: images[0]?.poster ?? project.image };
         setSelectedProject(next);
@@ -1126,6 +1155,7 @@ export default function App() {
     setPortfolioItems(prev => {
       const newItems = [...prev];
       const project = { ...newItems[projectIdx] };
+      deleteUploadedMedia(project.images[imgIdx]);
       const images = project.images.filter((_, i) => i !== imgIdx);
       project.images = images;
       newItems[projectIdx] = syncPortfolioCover(project);
@@ -1388,6 +1418,7 @@ export default function App() {
                         onClick={(e) => {
                           e.stopPropagation();
                           if (isVideoPortfolioPage) {
+                            item.images.forEach(deleteUploadedMedia);
                             setVideoProjects(prev => prev.filter(project => project.id !== item.id));
                             if (selectedProject?.id === item.id) setSelectedProject(null);
                           } else {
