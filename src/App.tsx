@@ -139,6 +139,151 @@ const VIDEO_PROJECT_STORAGE_KEY = 'kacey-video-project';
 const VIDEO_PROJECTS_STORAGE_KEY = 'kacey-video-projects';
 const VIDEO_HOME_COVER = '/images/video-portfolio-cover.png';
 
+const imageMedia = (fileName: string): PortfolioMedia => ({ url: `/uploads/${fileName}`, type: 'image' });
+const videoMedia = (fileName: string, poster: string): PortfolioMedia => ({
+  url: `/uploads/${fileName}`,
+  type: 'video',
+  poster: `/uploads/${poster}`,
+});
+
+const DEFAULT_VIDEO_PROJECTS: PortfolioItem[] = [
+  {
+    id: -1,
+    title: '视频创作',
+    image: '/uploads/1790144386931-output-7s.jpg',
+    images: [
+      videoMedia('1790144386580-output.mp4', '1790144386931-output-7s.jpg'),
+      videoMedia('1790145896230-output.mp4', '1790145896509-output-7s.jpg'),
+      videoMedia('1790145904979-output-1.mp4', '1790145905125-output-1--7s.jpg'),
+      videoMedia('1790145917486-output-3.mp4', '1790145917620-output-3--7s.jpg'),
+      videoMedia('1790145930116-output-4.mp4', '1790145930197-output-4--7s.jpg'),
+      videoMedia('1790145976388-output-1.mp4', '1790145976548-output-1--7s.jpg'),
+    ],
+  },
+];
+
+const DEFAULT_PORTFOLIO_ITEMS: PortfolioItem[] = [
+  {
+    id: 1,
+    title: '荔蜜品牌升级',
+    image: '/images/limi-brand-upgrade-cover.png',
+    coverVariant: 'limi-brand',
+    images: [
+      { url: '/images/limi-brand-upgrade-cover.png', type: 'image' },
+      ...[
+        '1789721055683-_05.png',
+        '1789721055692-_06.png',
+        '1789721055717-_07.png',
+        '1789721055779-_08.png',
+        '1789721056086-_09.png',
+        '1789721088593-_13.png',
+        '1789721088636-_14.png',
+        '1789721088653-_15.png',
+        '1789721088699-_16.png',
+        '1789721088744-_17.png',
+        '1789721088825-_18.png',
+        '1789721088871-_19.png',
+        '1789721088941-_20.png',
+        '1789721088983-_21.png',
+        '1789721089031-_22.png',
+        '1789721089114-_23.png',
+        '1789721089163-_24.png',
+        '1789721089197-_25.png',
+        '1789721089292-_26.png',
+        '1789721089326-_27.png',
+        '1789721089394-_28.png',
+      ].map(imageMedia),
+    ],
+  },
+  {
+    id: 2,
+    title: 'IP形象设计',
+    image: '/images/ip-character-design-cover.png',
+    images: [
+      { url: '/images/ip-character-design-cover.png', type: 'image' },
+      ...[
+        '1790064972810-_04.png',
+        '1790064972858-_05.png',
+        '1790064972875-_06.png',
+        '1790064972888-_07.png',
+        '1790064972984-_08.png',
+        '1790064973445-_09.png',
+        '1790065076666-_12.png',
+        '1790065076697-_13.png',
+        '1790065076756-_14.png',
+        '1790065076799-_15.png',
+        '1790065076834-_16.png',
+        '1790065076875-_17.png',
+        '1790065076938-_18.png',
+        '1790065076980-_19.png',
+        '1790065077069-_20.png',
+        '1790065077106-_21.png',
+        '1790065077159-_22.png',
+        '1790065077252-_23.png',
+        '1790065077305-_24.png',
+        '1790065077360-_25.png',
+        '1790065077455-_26.png',
+        '1790065077495-_27.png',
+        '1790065077574-_28.png',
+        '1790065122930-_30.png',
+        '1790065123385-_31.png',
+        '1790065123667-_32.png',
+      ].map(imageMedia),
+    ],
+  },
+  {
+    id: 7,
+    title: '武汉美食节',
+    image: '/images/wuhan-food-festival-cover.png',
+    coverPosition: 'top',
+    images: [
+      { url: '/images/wuhan-food-festival-cover.png', type: 'image' },
+      imageMedia('1789721112943-_34.png'),
+      imageMedia('1789721113632-_35.png'),
+      imageMedia('1789721364450-_37.png'),
+    ],
+  },
+  {
+    id: 4,
+    title: '品牌视觉延展',
+    image: '/images/design-portfolio-cover.png',
+    images: [
+      { url: '/images/design-portfolio-cover.png', type: 'image' },
+      ...[
+        '1790069431722-_04.png',
+        '1790069431740-_05.png',
+        '1790069431771-_06.png',
+        '1790069431785-_07.png',
+        '1790069431893-_08.png',
+        '1790069432406-_09.png',
+        '1790069471703-_12.png',
+        '1790069471733-_13.png',
+        '1790069471785-_14.png',
+        '1790069471804-_15.png',
+        '1790069471860-_16.png',
+        '1790069471935-_17.png',
+        '1790069472067-_18.png',
+        '1790069472117-_19.png',
+        '1790069472209-_20.png',
+        '1790069472284-_21.png',
+        '1790069472355-_22.png',
+        '1790069472493-_23.png',
+        '1790069472557-_24.png',
+        '1790069472602-_25.png',
+        '1790069472753-_26.png',
+        '1790069472793-_27.png',
+        '1790069472894-_28.png',
+        '1790069495221-_30.png',
+        '1790069495682-_31.png',
+        '1790069495957-_32.png',
+        '1790069521738-_33.png',
+        '1790069522205-_34.png',
+        '1790069523190-_35.png',
+      ].map(imageMedia),
+    ],
+  },
+];
+
 const createVideoPoster = (file: File) =>
   new Promise<Blob | null>((resolve, reject) => {
     const video = document.createElement('video');
@@ -174,12 +319,7 @@ const createVideoPoster = (file: File) =>
   });
 
 const loadVideoProject = (): PortfolioItem => {
-  const fallback: PortfolioItem = {
-    id: -1,
-    title: '视频创作',
-    image: VIDEO_HOME_COVER,
-    images: []
-  };
+  const fallback = DEFAULT_VIDEO_PROJECTS[0];
 
   const savedVideo = window.localStorage.getItem(VIDEO_PROJECT_STORAGE_KEY);
   try {
@@ -210,12 +350,15 @@ const loadVideoProject = (): PortfolioItem => {
 const loadVideoProjects = (): PortfolioItem[] => {
   try {
     const saved = window.localStorage.getItem(VIDEO_PROJECTS_STORAGE_KEY);
-    if (saved) return JSON.parse(saved) as PortfolioItem[];
+    if (saved) {
+      const projects = JSON.parse(saved) as PortfolioItem[];
+      return projects.length ? projects : DEFAULT_VIDEO_PROJECTS;
+    }
     const legacy = loadVideoProject();
-    return legacy.images.length ? [legacy] : [];
+    return legacy.images.length ? [legacy] : DEFAULT_VIDEO_PROJECTS;
   } catch (error) {
     console.error('Failed to restore video projects:', error);
-    return [];
+    return DEFAULT_VIDEO_PROJECTS;
   }
 };
 
@@ -869,92 +1012,17 @@ export default function App() {
   const isVideoPortfolioPage = currentPage === 'video-portfolio';
 
   const [portfolioItems, setPortfolioItems] = useState<PortfolioItem[]>(() => {
-    const defaultItems: PortfolioItem[] = [
-    { 
-      id: 1, 
-      title: "项目名称 01", 
-      image: "https://images.unsplash.com/photo-1634942537034-222a613d961e?q=80&w=1000&auto=format&fit=crop",
-      images: [
-        { url: "https://images.unsplash.com/photo-1634942537034-222a613d961e?q=80&w=1200&auto=format&fit=crop", type: 'image' },
-        { url: "https://images.unsplash.com/photo-1626785774573-4b799315345d?q=80&w=1200&auto=format&fit=crop", type: 'image' },
-        { url: "https://images.unsplash.com/photo-1586717791821-3f44a563eb4c?q=80&w=1200&auto=format&fit=crop", type: 'image' }
-      ]
-    },
-    { 
-      id: 2, 
-      title: "项目名称 02", 
-      image: "https://images.unsplash.com/photo-1626785774573-4b799315345d?q=80&w=1000&auto=format&fit=crop",
-      images: [
-        { url: "https://images.unsplash.com/photo-1626785774573-4b799315345d?q=80&w=1200&auto=format&fit=crop", type: 'image' },
-        { url: "https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?q=80&w=1200&auto=format&fit=crop", type: 'image' },
-        { url: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1200&auto=format&fit=crop", type: 'image' }
-      ]
-    },
-    { 
-      id: 3, 
-      title: "项目名称 03", 
-      image: "https://images.unsplash.com/photo-1586717791821-3f44a563eb4c?q=80&w=1000&auto=format&fit=crop",
-      images: [
-        { url: "https://images.unsplash.com/photo-1586717791821-3f44a563eb4c?q=80&w=1200&auto=format&fit=crop", type: 'image' },
-        { url: "https://images.unsplash.com/photo-1557683316-973673baf926?q=80&w=1200&auto=format&fit=crop", type: 'image' },
-        { url: "https://images.unsplash.com/photo-1545235617-9465d2a55698?q=80&w=1200&auto=format&fit=crop", type: 'image' }
-      ]
-    },
-    { 
-      id: 4, 
-      title: "项目名称 04", 
-      image: "https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?q=80&w=1000&auto=format&fit=crop",
-      images: [
-        { url: "https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?q=80&w=1200&auto=format&fit=crop", type: 'image' },
-        { url: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1200&auto=format&fit=crop", type: 'image' },
-        { url: "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=1200&auto=format&fit=crop", type: 'image' }
-      ]
-    },
-    { 
-      id: 5, 
-      title: "荔蜜品牌升级", 
-      image: "/images/limi-brand-upgrade-cover.png",
-      coverVariant: 'limi-brand',
-      images: [
-        { url: "/images/limi-brand-upgrade-cover.png", type: 'image' },
-        { url: "https://images.unsplash.com/photo-1511433662265-63e9f3513191?q=80&w=1200&auto=format&fit=crop", type: 'image' },
-        { url: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=1200&auto=format&fit=crop", type: 'image' }
-      ]
-    },
-    { 
-      id: 6, 
-      title: "IP形象设计", 
-      image: "/images/ip-character-design-cover.png",
-      images: [
-        { url: "/images/ip-character-design-cover.png", type: 'image' },
-        { url: "https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=1200&auto=format&fit=crop", type: 'image' },
-        { url: "https://images.unsplash.com/photo-1493421419110-74f4e85ba124?q=80&w=1200&auto=format&fit=crop", type: 'image' }
-      ]
-    },
-    {
-      id: 7,
-      title: "武汉美食节",
-      image: "/images/wuhan-food-festival-cover.png",
-      coverPosition: 'top',
-      images: [
-        { url: "/images/wuhan-food-festival-cover.png", type: 'image' },
-        { url: "/uploads/1789721112943-_34.png", type: 'image' },
-        { url: "/uploads/1789721113632-_35.png", type: 'image' },
-        { url: "/uploads/1789721364450-_37.png", type: 'image' }
-      ]
-    },
-  ];
-
     const savedItems = window.localStorage.getItem(PORTFOLIO_STORAGE_KEY);
     if (!savedItems) {
-      return normalizePortfolioItems(defaultItems);
+      return normalizePortfolioItems(DEFAULT_PORTFOLIO_ITEMS);
     }
 
     try {
-      return normalizePortfolioItems(JSON.parse(savedItems) as PortfolioItem[]);
+      const items = JSON.parse(savedItems) as PortfolioItem[];
+      return normalizePortfolioItems(items.length ? items : DEFAULT_PORTFOLIO_ITEMS);
     } catch (error) {
       console.error('Failed to restore portfolio items:', error);
-      return normalizePortfolioItems(defaultItems);
+      return normalizePortfolioItems(DEFAULT_PORTFOLIO_ITEMS);
     }
   });
 
